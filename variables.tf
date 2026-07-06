@@ -87,6 +87,6 @@ variable "node_service_account" {
 variable "chart_path" {
   description = "chart path"
   type        = string
-  default = "./simple-app"
+  #default = "./simple-app"
 
 }
