@@ -1,21 +1,20 @@
 variable "gcp_project_id" {
   description = "The GCP project ID."
   type        = string
-  default = "bubbly-pillar-480718-h2" 
 
 }
 
 variable "helm_release_name" {
   description = "helm release name."
   type        = string
-  default = "mod-1"
+  default = "rls-5"
   
 }
 
 variable "helm_namespace" {
   description = "GKE name space"
   type        = string
-  default = "mod-1"
+  default     = "hi2"
 }
 
 
@@ -48,7 +47,6 @@ variable "gcp_location" {
 variable "cluster_id" {
   description = "ID of the cluster"
   type        = string
-  default = "pvt-gke"
 }
 
 
@@ -67,22 +65,16 @@ variable "set_inputs" {
 variable "cluster_name" {
   description = "cluster name"
   type        = string
-  default = "pvt-gke"
-
 }
 
 variable "cluster_project_id" {
   description = "cluster project id"
   type        = string
-  default = "bubbly-pillar-480718-h2" 
-
 }
 
 variable "cluster_master_cidr" {
   description = "cluster Master IP Range"
   type        = string
-  default = "4444"
-
 }
 
 variable "node_service_account" {
@@ -90,6 +82,7 @@ variable "node_service_account" {
   type        = string
   default     = "infra-manager-sa@saas-demo-496915.iam.gserviceaccount.com"
 }
+
 
 variable "chart_path" {
   description = "chart path"
