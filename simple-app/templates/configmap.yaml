@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-html
+labels:
+  app: {{ .Release.Name }}
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Hello World</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .container {
+                text-align: center;
+                padding: 20px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            h1 { color: #4CAF50; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>{{ .Values.appText }}</h1>
+            <p>Served from a Private GKE Cluster via Helm.</p>
+        </div>
+    </body>
+    </html>

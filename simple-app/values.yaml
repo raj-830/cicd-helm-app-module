@@ -1,0 +1,22 @@
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort # NodePort or ClusterIP is required by GKE Ingress
+  port: 80
+
+ingress:
+  enabled: true
+  # 'gce' tells GKE to provision a Google Cloud External HTTP(S) Load Balancer
+  className: gce 
+  hosts:
+    - host: "" # Leave empty if you don't have a domain name yet (uses raw external IP)
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+appText: "Hello World-new-version"
